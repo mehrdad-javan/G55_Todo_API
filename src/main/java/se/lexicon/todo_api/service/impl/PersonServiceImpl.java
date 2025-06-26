@@ -31,7 +31,7 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public PersonDto findById(Long id) {
-        Person personEntity = repository.findById(id).orElseThrow(() -> new IllegalArgumentException("Id not found: " + id));
+        Person personEntity = repository.findById(id).orElseThrow(() -> new IllegalArgumentException("Id: (" + id + ")  not found"));
 
         return new PersonDto(
                 personEntity.getId(),
