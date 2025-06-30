@@ -45,6 +45,14 @@ public class Todo {
     @JoinColumn(name = "person_id", nullable = false, unique = true)
     private Person person; // person_id
 
+    public Todo(String title, String description, boolean completed, LocalDateTime dueDate) {
+        this.title = title;
+        this.description = description;
+        this.completed = completed;
+        this.dueDate = dueDate;
+    }
+
+
     @PrePersist
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();

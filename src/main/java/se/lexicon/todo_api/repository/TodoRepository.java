@@ -52,4 +52,7 @@ public interface TodoRepository extends CrudRepository<Todo, Long> {
     // 📌 Count all tasks assigned to a person
     long countByPersonId(Long personId);
     // select count(*) from todo where person_id = :personId;
+
+    @Override
+    List<Todo> findAll();
 }
