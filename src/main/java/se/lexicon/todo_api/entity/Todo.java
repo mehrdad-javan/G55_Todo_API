@@ -42,7 +42,7 @@ public class Todo {
     private boolean isAssigned;
 
     @ManyToOne
-    @JoinColumn(name = "person_id", nullable = false, unique = true)
+    @JoinColumn(name = "person_id")
     private Person person; // person_id
 
     public Todo(String title, String description, boolean completed, LocalDateTime dueDate) {
@@ -50,6 +50,12 @@ public class Todo {
         this.description = description;
         this.completed = completed;
         this.dueDate = dueDate;
+    }
+
+    public Todo(String title, String description, boolean completed) {
+        this.title = title;
+        this.description = description;
+        this.completed = completed;
     }
 
 
